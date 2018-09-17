@@ -67,15 +67,18 @@ if( !empty( $headerImg ) ) {
 <section id="header-section">
 
   <div class="container" id="header">
-     <div class="six columns"> 
+
+    <div class="twelve columns" id="topnav">
+    <!--  the Menu -->
+    <?php if(has_nav_menu( 'primary' )) { wp_nav_menu( array( 'theme_location' => 'primary' ) ); } ?>
+    </div> 
+
+     <div class="twelve columns"> 
         <div class="logo">
             <h1 class='site-title'><a href="<?php echo home_url(); ?>"><?php echo get_bloginfo('name');?></a></h1>
         </div>
     </div> 
-    <div class="six columns" id="topnav">
-    <!--  the Menu -->
-    <?php if(has_nav_menu( 'primary' )) { wp_nav_menu( array( 'theme_location' => 'primary' ) ); } ?>
-    </div> 
+
 
 </div>
 </section>

@@ -15,11 +15,14 @@ add_filter( 'the_content', 'annotationspace_content_filter' );
 
 
 function annotationspace_add_refs($match) {
+
   if($id = url_to_postid($match[1])) {
 	$post = get_post($id);
-	return '<a href="'.$match[1].'" ref="'.$post->post_type."s/".$id.'"';
+
+	return '<a href="'.$match[1].'" ref="'.$post->post_type.'s/'.$id.'"';
   }
   else { return $match[0]; }
+
 }
 
 
